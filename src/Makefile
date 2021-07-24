@@ -6,19 +6,19 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/24 19:38:12 by prolling          #+#    #+#              #
-#    Updated: 2021/07/24 19:41:16 by prolling         ###   ########.fr        #
+#    Updated: 2021/07/24 19:50:31 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 buff = buff/*.c buff/*.h
-math = math/*.c math/*.h
-stats = stats/*.c stats/*.c
+#math = math/*.c math/*.h
+#stats = stats/*.c stats/*.c
 header = sinclair.h
 
 SOURCES	=	$(header) $(buff) $(math) $(stats)
 
-NAME = sinclair.a
-DNAME = sinclair.so
+NAME = libsinclair.a
+DNAME = libsinclair.so
 FLAGS = -Wall -Wextra -Werror
 CC = gcc
 LIB = ar rc

@@ -6,17 +6,17 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 19:29:27 by prolling          #+#    #+#             */
-/*   Updated: 2021/07/24 19:36:46 by prolling         ###   ########.fr       */
+/*   Updated: 2021/07/24 20:09:59 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-#define BUFFER_SLICES 10
+#define BUFFER_BLOCK_LEN 10
 
 /*
 * Integer buffer that you can push/pop to (lifo)
-* It keeps track of the end
+* It keeps track of the current end pointer and the maximum size
 */
 typedef struct s_ibuff
 {
