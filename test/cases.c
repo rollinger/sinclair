@@ -24,7 +24,7 @@ void test_ibuff_create(void **state)
 
 /* ibuff_push Test Case
 SIG:	void ibuff_push(t_ibuff *b, int i)
-TESTS if the int is written and the ptr is moved forward
+TESTS if the int is written and the ptr is moved forward and the statistics are ok.
 */
 void test_ibuff_push(void **state)
 {
@@ -36,6 +36,7 @@ void test_ibuff_push(void **state)
 		ibuff_push(new, arr[i]);
 		assert_int_equal(*(new->bptr - 1), arr[i]);
 		assert_int_equal(new->bptr - new->buff, i + 1);
+		assert_int_equal(new->bptr - new->buff, new->n);
 		++i;
 	}
 	assert_int_equal(new->bptr - new->buff, n);

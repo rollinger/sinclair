@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 buff = buff/*.c buff/*.h
-#math = math/*.c math/*.h
+math = math/*.c math/*.h
 #stats = stats/*.c stats/*.c
 header = sinclair.h
 

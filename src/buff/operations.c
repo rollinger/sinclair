@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "buffer.h"
+#include "../math/math.h"
 
 /* create an int buffer */
 t_ibuff		*ibuff_create(void)
@@ -22,6 +23,9 @@ t_ibuff		*ibuff_create(void)
 	new->buff = (int *)malloc(sizeof(int) * BUFFER_BLOCK_LEN);
 	new->bptr = new->buff;
 	new->bmax = BUFFER_BLOCK_LEN;
+	new->n = 0;
+	new->min = 0;
+	new->max = 0;
 	return (new);
 }
 
@@ -41,7 +45,11 @@ void 	ibuff_push(t_ibuff *b, int i)
 		return ;
 	// TODO check if buffer has space
 	*(b->bptr) = i;
-	b->bptr++;
+	(b->bptr)++;
+	// Add statistics
+	b->n++;
+	b->min = min_i(b->min, i);
+	b->max = max_i(b->max, i);
 	return ;
 }
 
