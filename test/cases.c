@@ -27,12 +27,12 @@ TESTS if the int is written and the ptr is moved forward
 void test_ibuff_push(void **state)
 {
 	size_t	n = 6, i = 0;
-	int		list[6] = {1,2,3,4,5,6};
+	int		arr[6] = {1,2,3,4,5,6};
 	t_ibuff	*new = ibuff_create();
 	while (i < n)
 	{
-		ibuff_push(new, list[i]);
-		assert_int_equal(*(new->bptr), list[i]);
+		ibuff_push(new, arr[i]);
+		assert_int_equal(*(new->bptr), arr[i]);
 		assert_int_equal(new->bptr - new->buff, i);
 		++i;
 	}
@@ -40,7 +40,6 @@ void test_ibuff_push(void **state)
 	(void) state; /* unused */
 	return ;
 }
-
 
 /* ibuff_pop Test Case
 SIG:	void ibuff_pop(t_ibuff *b, int i)

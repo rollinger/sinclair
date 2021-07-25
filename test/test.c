@@ -8,8 +8,8 @@ int main(void)
 	const struct CMUnitTest tests[] = {
 		//cmocka_unit_test(null_test_success),
 		cmocka_unit_test(test_ibuff_create),
-		cmocka_unit_test(test_ibuff_push),
-		cmocka_unit_test(test_ibuff_pop),
+		//cmocka_unit_test(test_ibuff_push),
+		//cmocka_unit_test(test_ibuff_pop),
 	};
 
 	printf("::: UNIT TESTS for ___sinclair___ :::\n");

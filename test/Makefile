@@ -11,12 +11,15 @@ $(NAME): clean
 	gcc $(FLAGS) $(sources) $(TESTTARGET) -lcmocka -o $(NAME)
 	mv $(NAME) ../bin/
 
-testrun: $(NAME)
+runtest: $(NAME)
 	./../bin/$(NAME)
 
-debug: $(NAME)
+debug:
+	cd ../src && make WITH_DEBUG=1
 	gcc $(FLAGS) -g $(sources) $(TESTTARGET) -lcmocka -o debug
 	mv debug ../bin/
+
+rundebug: debug
 	$(DEBUGGER) ../bin/debug
 
 all:  $(NAME)

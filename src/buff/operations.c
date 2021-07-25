@@ -15,8 +15,11 @@
 /* create an int buffer */
 t_ibuff	*ibuff_create(void)
 {
-	// TODO
-	return (NULL);
+	t_ibuff	*new;
+	new = (t_ibuff *)malloc(sizeof(t_ibuff *));
+	if (!new)
+		return (NULL);
+	return (new);
 }
 
 /* push to the end of the int buffer */

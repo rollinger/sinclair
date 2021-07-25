@@ -23,15 +23,21 @@ FLAGS = -Wall -Wextra -Werror
 CC = gcc
 LIB = ar rc
 
+ifdef WITH_DEBUG
+	DEBUG = -g
+else
+	DEBUG =
+endif
+
 $(NAME): clean
-	gcc -c $(FLAGS) $(SOURCES)
+	gcc -c $(DEBUG) $(FLAGS) $(SOURCES)
 	ar rc $(NAME) *.o
 	ranlib $(NAME)
 	mv $(NAME) ../bin/
 	rm -f *.o *.gch
 
 $(DNAME): clean
-	gcc -shared $(SOURCES) -o $(DNAME)
+	gcc -shared $(DEBUG) $(SOURCES) -o $(DNAME)
 	mv $(DNAME) ../bin/
 	rm -f *.o *.gch
 

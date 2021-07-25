@@ -3,7 +3,10 @@ the first of 21 volumes titled Statistical Account of Scotland.
 
 Sinclair is an minimal statistical library for minimal C.
 
-It operates on buffered lists of ints or floats and has statistical attributes:
+It operates on buffered lists of ints or floats and has a variety of statistical attributes
+precomputed. You can push and pop data on the buffer and the attributes gets updated.
+
+Current implemented statistical attributes are
 - min
 - max
 - mean
