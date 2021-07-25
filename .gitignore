@@ -1,4 +1,2 @@
 *.gch
-bin/libsinclair.a
-bin/libsinclair.so
-bin/testsuite
+bin/*

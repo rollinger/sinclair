@@ -34,11 +34,11 @@ void test_ibuff_push(void **state)
 	while (i < n)
 	{
 		ibuff_push(new, arr[i]);
-		assert_int_equal(*(new->bptr), arr[i]);
-		assert_int_equal(new->bptr - new->buff, i);
+		assert_int_equal(*(new->bptr - 1), arr[i]);
+		assert_int_equal(new->bptr - new->buff, i + 1);
 		++i;
 	}
-	assert_int_equal(new->bptr - new->buff, n - 1);
+	assert_int_equal(new->bptr - new->buff, n);
 	(void) state; /* unused */
 	return ;
 }
@@ -48,6 +48,16 @@ SIG:	void ibuff_pop(t_ibuff *b, int i)
 TESTS if the int is written and the ptr is moved bacwards
 */
 void test_ibuff_pop(void **state)
+{
+	(void) state; /* unused */
+	return ;
+}
+
+/* ibuff_pop Test Case
+SIG:	size_t	ibuff_len(t_ibuff *b)
+TESTS if the length is returned correctly
+*/
+void test_ibuff_len(void **state)
 {
 	(void) state; /* unused */
 	return ;

@@ -13,7 +13,7 @@
 #include "buffer.h"
 
 /* create an int buffer */
-t_ibuff	*ibuff_create(void)
+t_ibuff		*ibuff_create(void)
 {
 	t_ibuff	*new;
 	new = (t_ibuff *)malloc(sizeof(t_ibuff *));
@@ -25,16 +25,27 @@ t_ibuff	*ibuff_create(void)
 	return (new);
 }
 
-/* push to the end of the int buffer */
-void ibuff_push(t_ibuff *b, int i)
+/* returns the number of elements in the buffer */
+size_t	ibuff_len(t_ibuff *b)
 {
-	// TODO
-	(void) b;
-	(void) i;
+	size_t len;
+	
+	len = b->bptr - b->buff;
+	return (len);
+}
+
+/* push to the end of the int buffer and increments the pointer */
+void 	ibuff_push(t_ibuff *b, int i)
+{
+	if (!b)
+		return ;
+	// TODO check if buffer has space
+	*(b->bptr) = i;
+	b->bptr++;
 	return ;
 }
 
-/* pop from the end of the int buffer */
+/* pop from the end of the int buffer and returns it*/
 void ibuff_pop(t_ibuff *b, int i)
 {
 	// TODO

@@ -26,5 +26,6 @@ typedef struct s_ibuff
 }				t_ibuff;
 
 t_ibuff	*ibuff_create(void);
+size_t	ibuff_len(t_ibuff *b);
 void	ibuff_push(t_ibuff *b, int i);
 void	ibuff_pop(t_ibuff *b, int i);
