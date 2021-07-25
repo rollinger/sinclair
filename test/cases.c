@@ -29,7 +29,7 @@ TESTS if the int is written and the ptr is moved forward
 void test_ibuff_push(void **state)
 {
 	size_t	n = 6, i = 0;
-	int		arr[6] = {1,2,3,4,5,6};
+	int		arr[6] = {88,2,8,99,4,8};
 	t_ibuff	*new = ibuff_create();
 	while (i < n)
 	{

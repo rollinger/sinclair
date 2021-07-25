@@ -23,6 +23,9 @@ typedef struct s_ibuff
 	int		*buff; 	/* actual buffer of ints */
 	int		*bptr; 	/* ptr of next insertion */
 	size_t	bmax; 	/* current buffer size */
+	size_t	n;
+	size_t	min;
+	size_t	max;
 }				t_ibuff;
 
 t_ibuff	*ibuff_create(void);
