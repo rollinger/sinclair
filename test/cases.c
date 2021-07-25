@@ -15,6 +15,8 @@ void test_ibuff_create(void **state)
 {
 	t_ibuff	*new = ibuff_create();
 	assert_non_null(new);
+	assert_non_null(new->buff);
+	assert_non_null(new->bptr);
 	assert_int_equal(new->bmax, BUFFER_BLOCK_LEN);
 	(void) state; /* unused */
 	return ;
